@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.14.2/.schema/devbox.schema.json",
+  "packages": [
+    "rustup@latest",
+    "libiconv@latest",
+    "lldb@latest"
+  ],
+  "env": {
+    "RUST_LOG": "wasm_on_server_runtime=debug"
+  },
+  "shell": {
+    "init_hook": [
+      "rustup default stable",
+      "cargo install cargo-watch",
+      "cargo fetch"
+    ],
+    "scripts": {
+      "dev": [
+        "cargo watch -x 'run'"
+      ]
+    }
+  }
+}

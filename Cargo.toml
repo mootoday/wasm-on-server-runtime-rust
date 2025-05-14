@@ -1,0 +1,18 @@
+[package]
+name = "wasm-on-server-runtime"
+version = "0.1.0"
+edition = "2024"                # Assuming 2021 or later is fine, using the latest stable
+
+[dependencies]
+axum = "0.8.4"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+wasmtime = { version = "32.0.0", features = [
+    "component-model",
+    "async",
+    "debug-builtins",
+] }
+wit-component = "0.208.1"
+anyhow = "1.0"
+wasmtime-wasi = "32.0.0"

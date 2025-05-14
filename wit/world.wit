@@ -1,0 +1,11 @@
+package local:main@0.0.1;
+
+interface host {
+    log: func(msg: string);
+}
+
+world runner {
+    import host;
+    
+    export run: func() -> result<string, string>;
+}
